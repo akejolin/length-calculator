@@ -26,10 +26,12 @@ function App() {
     }
     window.scrollTo(0, document.body.offsetHeight);
     setScrollPosT(0);
-    console.log('i fkn run')
 
     document.addEventListener("scroll", (event: Event) => {
-      const messuredScrollY = pxToTrueCm((duplantisPx-window.scrollY));
+      let nextValue:number = duplantisPx - window.scrollY || 0
+      nextValue = nextValue < 0 ? 0 : nextValue;
+
+      const messuredScrollY = pxToTrueCm(nextValue);
       setScrollPosT(
         messuredScrollY > duplantisCm
         || messuredScrollY === duplantisCm ?
