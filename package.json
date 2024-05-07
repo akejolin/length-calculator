@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "DISABLE_ESLINT_PLUGIN=true NODE_ENV='production' BUILD_PATH='./docs' PUBLIC_URL='https://akejolin.github.io/length-calculator/' react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

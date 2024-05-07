@@ -6,7 +6,6 @@ interface Props {
 }
 
 function Line({lengthPx}: Props) {
-  
   return (
     <>
         <div id={'line'} style={{position:'relative', height: lengthPx, width:20, backgroundColor: 'white' }}>
