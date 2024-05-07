@@ -1,0 +1,57 @@
+#ruler {
+   left: 0;
+   color: white;
+   width: 100;
+}
+
+ol,
+li {
+  /* removing the default list counters/markers: */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ol {
+  /* resetting the counter so every <ol>
+     has an independent count: */
+  counter-reset: marker -1;
+}
+li {
+  /* 'real world' measurements are perhaps not
+     entirely faithful on screen: */
+  /* height: 1cm; */
+  border-top: 1px solid #fff;
+  /* including the border in the height of the element: */
+  box-sizing: border-box;
+  width: 2.5em;
+  /* incrementing the counter: */
+  counter-increment: marker;
+  /* to position the counter relative
+     to the <li>: */
+  position: relative;
+  border-left: 2px solid #fff;
+}
+
+/* preventing a 'tail' on the <ol> from the
+   height of the last <li> (the counter is
+   displayed at the top, not the bottom): */
+li:last-child {
+  height: 0;
+}
+li::after {
+  /* positioning the pseudo-element that
+     contains the counter: */
+  position: absolute;
+  /* vertically-centering it alongside the
+     top border: */
+  top: -10px;
+  /* moving it the full width of the element,
+     outside of the right side of the element: */
+  left: 100%;
+  /* height: 1em; */
+  line-height: 20px;
+  width: 2em;
+  text-align: center;
+  /* specifying the counter to use: */
+  content: counter(marker);
+}

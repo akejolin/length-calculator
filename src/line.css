@@ -1,0 +1,15 @@
+.arrow {
+   color:white;
+   border: solid white;
+   border-width: 0 4px 4px 0;
+   display: inline-block;
+   padding: 4px;
+   position: absolute;
+   bottom: -8px;
+   left: 0px;
+   overflow: hidden;
+ }
+ .down {
+   transform: rotate(45deg);
+   -webkit-transform: rotate(45deg);
+ }
